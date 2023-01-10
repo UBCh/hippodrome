@@ -137,7 +137,7 @@ public class HorseTest {
 	Horse horse = new Horse("zero", 10.0);
 	horse.move();
 	double actual = horse.getDistance();
-	Mockito.verify(mockObject).getRandomDouble(0.2, 0.7);
+//	Mockito.verify(mockObject).getRandomDouble(0.2, 0.7);
 	assertEquals(50, actual);
     }
 

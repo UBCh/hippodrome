@@ -28,6 +28,8 @@ public class Horse {
         this(name, speed, 0);
     }
 
+
+
     public String getName() {
         return name;
     }
