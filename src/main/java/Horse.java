@@ -1,3 +1,6 @@
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
+
 import static java.util.Objects.isNull;
 
 public class Horse {
@@ -5,23 +8,31 @@ public class Horse {
     private final String name;
     private final double speed;
     private double distance;
+    private static final Logger logger = LoggerFactory.getLogger(Horse.class);
+
 
     public Horse(String name, double speed, double distance) {
+
         if (isNull(name)) {
+            logger.info(new Message(Horse.class, " Name cannot be null"));
             throw new IllegalArgumentException("Name cannot be null.");
         } else if (name.isBlank()) {
+            logger.info(new Message(Horse.class, " Name cannot be blank"));
             throw new IllegalArgumentException("Name cannot be blank.");
         }
         if (speed < 0) {
+            logger.info(new Message(Horse.class, " Speed cannot be negative"));
             throw new IllegalArgumentException("Speed cannot be negative.");
         }
         if (distance < 0) {
+            logger.info(new Message(Horse.class, " Distance cannot be negative"));
             throw new IllegalArgumentException("Distance cannot be negative.");
         }
 
         this.name = name;
         this.speed = speed;
         this.distance = distance;
+        logger.info(new Message(Horse.class, " Создание Horse, имя [" +name+"], скорость ["+speed+"]"));
     }
 
     public Horse(String name, double speed) {
@@ -49,4 +60,11 @@ public class Horse {
     public static double getRandomDouble(double min, double max) {
         return (Math.random() * (max - min)) + min;
     }
+//public void move() {
+//    distance += speed * getRandomDouble();
+//}
+//    public static double getRandomDouble() {
+//       return (Math.random() * (0.7 - 0.2)) + 0.2;
+//    }
+
 }

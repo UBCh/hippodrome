@@ -1,20 +1,21 @@
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Test;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.random.RandomGenerator.getDefault;
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.times;
 
 public class HippodromeTest {
 
-   private List<Horse> horses = new ArrayList<>();
+    private List<Horse> horses = new ArrayList<>();
+    private Faker faker = new Faker();
+
 
     @Test
     @DisplayName("Constructor. Should throw an exception when NULL is passed")
@@ -50,8 +51,8 @@ public class HippodromeTest {
     public void shouldGetHorses() {
 	 horses = new ArrayList<>();
 	for (int i = 0; i < 30; i++) {
-	    String name = new NameGenerator().generatorName();
-	    Double speed = new NameGenerator().generateSpeed();
+	    String name = faker.name().firstName();
+	    Double speed = getDefault().nextDouble();
 	    horses.add(new Horse(name, speed));
 	}
         Hippodrome hippodrome = new Hippodrome(horses);
@@ -80,35 +81,19 @@ public class HippodromeTest {
     @DisplayName("GetWinner.returns the horse with the largest distance value")
     public void shouldGetWinner() {
             for (int i = 0; i < 5; i++) {
-            String name = new NameGenerator().generatorName();
-            Double speed = new NameGenerator().generateSpeed();
-           Horse testHorse=new Horse(name, speed);
-           testHorse.move();
-             horses.add(testHorse);
-        }
+		String name = faker.name().firstName();
+		Double speed = getDefault().nextDouble();
+		Horse testHorse = new Horse(name, speed);
+		testHorse.move();
+		horses.add(testHorse);
+	    }
         Hippodrome hippodrome = new Hippodrome(horses);
       Horse expected=horses.stream().max((o1, o2) -> Double.compare(o1.getDistance(), o2.getDistance())).get();
         Horse actual=hippodrome.getWinner();
         assertEquals(expected.getName(),actual.getName());
         assertEquals(expected.getDistance(),actual.getDistance());
-    }
+	    }
 
 
-    private class NameGenerator {
-	public NameGenerator() {
-	}
-
-	private String generatorName() {
-
-	    return RandomStringUtils.randomAlphabetic(5);
-	}
-
-
-	private Double generateSpeed() {
-
-	    return getDefault().nextDouble();
-	}
 
     }
-
-}

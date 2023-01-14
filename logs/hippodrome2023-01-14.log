@@ -1,0 +1,41 @@
+2023-01-14 10:44:52,526 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:45:24,233 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:46:34,064 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:47:37,897 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:48:13,424 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:48:13,550 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:48:13,550 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:49:22,104 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:49:22,214 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:49:22,230 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:49:47,081 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:50:20,521 INFO  Horse :  Speed cannot be negative
+2023-01-14 10:50:20,569 INFO  Horse :  Distance cannot be negative
+2023-01-14 10:50:20,569 INFO  Horse :  Создание Horse, имя [horse], скорость [3.0]
+2023-01-14 10:50:20,647 INFO  Horse :  Name cannot be blank
+2023-01-14 10:50:20,647 INFO  Horse :  Name cannot be blank
+2023-01-14 10:50:20,663 INFO  Horse :  Name cannot be null
+2023-01-14 10:50:20,663 INFO  Horse :  Создание Horse, имя [horse], скорость [3.0]
+2023-01-14 10:50:20,663 INFO  Horse :  Distance cannot be negative
+2023-01-14 10:50:20,678 INFO  Horse :  Создание Horse, имя [horse], скорость [10.0]
+2023-01-14 10:50:20,804 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:50:20,992 INFO  Horse :  Speed cannot be negative
+2023-01-14 10:50:21,008 INFO  Horse :  Name cannot be blank
+2023-01-14 10:50:21,024 INFO  Horse :  Name cannot be blank
+2023-01-14 10:50:21,024 INFO  Horse :  Создание Horse, имя [horse], скорость [10.0]
+2023-01-14 10:50:21,039 INFO  Horse :  Name cannot be null
+2023-01-14 10:52:35,327 INFO  Horse :  Speed cannot be negative
+2023-01-14 10:52:35,390 INFO  Horse :  Distance cannot be negative
+2023-01-14 10:52:35,390 INFO  Horse :  Создание Horse, имя [horse], скорость [3.0]
+2023-01-14 10:52:35,468 INFO  Horse :  Name cannot be blank
+2023-01-14 10:52:35,484 INFO  Horse :  Name cannot be blank
+2023-01-14 10:52:35,500 INFO  Horse :  Name cannot be null
+2023-01-14 10:52:35,500 INFO  Horse :  Создание Horse, имя [horse], скорость [3.0]
+2023-01-14 10:52:35,515 INFO  Horse :  Distance cannot be negative
+2023-01-14 10:52:35,515 INFO  Horse :  Создание Horse, имя [horse], скорость [10.0]
+2023-01-14 10:52:35,641 INFO  Horse :  Создание Horse, имя [zero], скорость [10.0]
+2023-01-14 10:52:35,844 INFO  Horse :  Speed cannot be negative
+2023-01-14 10:52:35,860 INFO  Horse :  Name cannot be blank
+2023-01-14 10:52:35,860 INFO  Horse :  Name cannot be blank
+2023-01-14 10:52:35,876 INFO  Horse :  Создание Horse, имя [horse], скорость [10.0]
+2023-01-14 10:52:35,876 INFO  Horse :  Name cannot be null
