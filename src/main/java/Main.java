@@ -1,20 +1,16 @@
-import org.junit.platform.commons.logging.Logger;
-import org.junit.platform.commons.logging.LoggerFactory;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
 
-import static java.util.logging.Logger.getLogger;
-import static org.junit.platform.commons.logging.Logger.*;
+
+
 
 public class Main {
 
-    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
         List<Horse> horses = List.of(
@@ -27,7 +23,9 @@ public class Main {
                 new Horse("Вишня", 3)
         );
         Hippodrome hippodrome = new Hippodrome(horses);
-logger.info(new Message(Main.class," Начало скачек. Количество участников: "+horses.size()));
+
+         logger.log(Level.INFO," Начало скачек. Количество участников: "+horses.size());
+
         for (int i = 0; i < 100; i++) {
             hippodrome.move();
             watch(hippodrome);
@@ -35,7 +33,7 @@ logger.info(new Message(Main.class," Начало скачек. Количест
         }
 
         String winnerName = hippodrome.getWinner().getName();
-        logger.info(new Message(Main.class," Окончание скачек. Победитель: "+winnerName));
+        logger.log(Level.INFO," Окончание скачек. Победитель: "+winnerName);
         System.out.println("Победил " + winnerName + "!");
     }
 
