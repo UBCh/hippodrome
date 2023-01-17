@@ -1,14 +1,13 @@
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -19,40 +18,24 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.times;
 
+
 public class HippodromeTest {
+
 
     private List<Horse> horses = new ArrayList<>();
     private Faker faker = new Faker();
 
 
-    private static void watch(Hippodrome hippodrome) throws Exception {
-	hippodrome.getHorses().stream().map(horse -> ".".repeat((int) horse.getDistance()) + horse.getName()).forEach(System.out::println);
-	System.out.println("\n".repeat(10));
-    }
+
 
     @Disabled("Test Passing, Temporarily Disabled")
     @Test
     @DisplayName("Main method. should run no longer than 22 seconds")
     @Timeout(value = 22, unit = TimeUnit.SECONDS)
-    public void shouldRunMain() throws Exception {
-	List<Horse> horses = List.of(new Horse("Буцефал", 2.4),
-		new Horse("Туз Пик", 2.5),
-		new Horse("Зефир", 2.6),
-		new Horse("Пожар",2.7),
-		new Horse("Лобстер", 2.8),
-		new Horse("Пегас", 2.9),
-		new Horse("Вишня", 3));
-	Hippodrome hippodrome = new Hippodrome(horses);
-
-	for (int i = 0; i < 100; i++) {
-	    hippodrome.move();
-	    watch(hippodrome);
-	    TimeUnit.MILLISECONDS.sleep(200);
-	}
-
-	String winnerName = hippodrome.getWinner().getName();
-	System.out.println("Победил " + winnerName + "!");
+    public void shouldExecuteMain() throws Exception {
+    Main.main();
     }
+
 
     @Test
     @DisplayName("ConstructorHorse. Should throw an exception when NULL is passed")
@@ -179,6 +162,7 @@ public class HippodromeTest {
 	    horse.move();
 	    double actual = horse.getDistance();
 	    assertEquals(500, actual);
+	    mockObject.close();
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
