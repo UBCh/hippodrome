@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
+
     static final Logger logger= LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
@@ -25,7 +26,7 @@ public class Main {
         );
         Hippodrome hippodrome = new Hippodrome(horses);
 
-         logger.error(" Начало скачек. Количество участников: "+horses.size());
+         logger.info(" Начало скачек. Количество участников: "+horses.size());
 
         for (int i = 0; i < 100; i++) {
             hippodrome.move();

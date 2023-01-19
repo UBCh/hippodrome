@@ -16,7 +16,7 @@
 </appenders>
 <loggers>
     <Root level="ALL">
-        <R ref="LogToFile"/>
+        <Appender ref="LogToFile"/>
     </Root>
 </loggers>
 </Configuration>
