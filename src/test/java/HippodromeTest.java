@@ -5,13 +5,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import static java.util.random.RandomGenerator.getDefault;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,7 +19,7 @@ public class HippodromeTest {
 
 
     private List<Horse> horses = new ArrayList<>();
-    private Faker faker = new Faker();
+    private final Faker faker = new Faker();
 
 
 
@@ -33,7 +29,7 @@ public class HippodromeTest {
     @DisplayName("Main method. should run no longer than 22 seconds")
     @Timeout(value = 22, unit = TimeUnit.SECONDS)
     public void shouldExecuteMain() throws Exception {
-    Main.main();
+   Main.main(null);
     }
 
 

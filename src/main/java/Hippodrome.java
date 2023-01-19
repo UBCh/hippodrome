@@ -1,6 +1,5 @@
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,20 +9,20 @@ import static java.util.Objects.isNull;
 
 public class Hippodrome {
 
-    static final Logger logger = LogManager.getLogger(Hippodrome.class);
+    static final Logger logger= LoggerFactory.getLogger(Hippodrome.class);
     private final List<Horse> horses;
 
     public Hippodrome(List<Horse> horses) {
         if (isNull(horses)) {
-            logger.log(Level.ERROR," Horses cannot be null");
+            logger.error(" Horses cannot be null");
             throw new IllegalArgumentException("Horses cannot be null.");
         } else if (horses.isEmpty()) {
-            logger.log(Level.ERROR," Horses cannot be empty");
+            logger.error(" Horses cannot be empty");
             throw new IllegalArgumentException("Horses cannot be empty.");
         }
 
         this.horses = horses;
-       logger.log(Level.DEBUG," Создание Hippodrome, лошадей "+horses.size());
+       logger.debug(" Создание Hippodrome, лошадей "+horses.size());
     }
 
     public List<Horse> getHorses() {
