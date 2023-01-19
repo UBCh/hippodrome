@@ -4,7 +4,7 @@
         <RollingFile name="LogToFile" filename="logs/hippodrome.log"
                      filePattern="logs/hippodrome.%d{yyyy-MM-dd}.log"
                      IgnoreExeptions="false">
-            <Patternlout Pattern=" %d %-5p %c: %M%n "/>
+            <PatternLayout pattern=" %d %-5p %-11c: %m%n "/>
             <TimeBasedTriggeringPolicy/>
             <DefaultRolloverStrategy>
             <Delete Basepath="logs" maxDepth="2">

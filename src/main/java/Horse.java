@@ -16,18 +16,18 @@ public class Horse {
     public Horse(String name, double speed, double distance) {
 
         if (isNull(name)) {
-           logger.error("Name cannot be null");
+           logger.error(" Name cannot be null");
             throw new IllegalArgumentException("Name cannot be null.");
         } else if (name.isBlank()) {
-            logger.error("Name cannot be blank");
+            logger.error(" Name cannot be blank");
             throw new IllegalArgumentException("Name cannot be blank.");
         }
         if (speed < 0) {
-            logger.error("Speed cannot be negative");
+            logger.error(" Speed cannot be negative");
             throw new IllegalArgumentException("Speed cannot be negative.");
         }
         if (distance < 0) {
-            logger.error("Distance cannot be negative");
+            logger.error(" Distance cannot be negative");
             throw new IllegalArgumentException("Distance cannot be negative.");
         }
 
